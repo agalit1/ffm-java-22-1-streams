@@ -42,6 +42,7 @@ public class Main {
             Files.lines(Path.of("students.csv"))
                      // Splitting the row into parts on the "," character
                     .map(row -> row.split(","))
+                    // skip the header
                     .skip(1)
                     // deleting the split rows that have less than 4 parts
                     .filter(parts -> parts.length >= 4)
